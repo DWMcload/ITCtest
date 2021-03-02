@@ -6,12 +6,28 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 
+/**
+ * Class ReaderService
+ * @package ITCtest\Services
+ */
 class ReaderService
 {
+    /**
+     * @var string
+     */
     public $url;
+    /**
+     * @var
+     */
     public $data;
+    /**
+     *
+     */
     const METHOD = 'GET';
 
+    /**
+     * ReaderService constructor.
+     */
     public function __construct()
     {
         $this->guzzleClient = new Client();
@@ -19,6 +35,11 @@ class ReaderService
 
     /*
      * @return Object
+     */
+    /**
+     * @param string $url
+     * @param array $query
+     * @return mixed
      */
     public function read(string $url, array $query = [])
     {
@@ -39,6 +60,10 @@ class ReaderService
         return $this->data;
     }
 
+    /**
+     * @param string $data
+     * @return mixed
+     */
     public function sanitize(string $data)
     {
         //TODO: add proper sanitation mechanism here

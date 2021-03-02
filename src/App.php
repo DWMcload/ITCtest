@@ -5,19 +5,30 @@ namespace ITCtest;
 use ITCtest\Repositories\InsuranceRepository;
 use ITCtest\Services\ReaderService;
 
+/**
+ * Class App
+ * @package ITCtest
+ */
 class App
 {
-    /*
+    /**
      * @var ReaderService;
      */
     public $readerService;
 
+    /**
+     * App constructor.
+     * @param ReaderService $readerService
+     */
     public function __construct(ReaderService $readerService)
     {
         $this->readerService = $readerService;
     }
 
-    public function run()
+    /**
+     * @return string
+     */
+    public function run(): string
     {
         $data = $this->readerService->read(API_URI . 'list');
 
