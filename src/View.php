@@ -17,18 +17,17 @@ class View
      */
     public function render($data)
     {
-        $template = file_get_contents(__TEMPLATE_DIR__.'/'.$this->template.'.tpl');
-        foreach ($data as $key => $value)
-        {
-            if(is_array($value)) {
-               $list = '';
-               foreach ($value as $item) {
-                   $list .= ' '.$item;
-               }
-               $value = $list;
+        $template = file_get_contents(__TEMPLATE_DIR__ . '/' . $this->template . '.tpl');
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $list = '';
+                foreach ($value as $item) {
+                    $list .= ' ' . $item;
+                }
+                $value = $list;
             }
 
-            $template = str_replace('<@'.$key.'>', $value, $template);
+            $template = str_replace('<@' . $key . '>', $value, $template);
 
         }
         return $template;

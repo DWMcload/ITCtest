@@ -24,7 +24,8 @@ class Insurance implements \IteratorAggregate
         $this->suppliers = $data->suppliers ?? [];
     }
 
-    public function getIterator() {
+    public function getIterator()
+    {
         return new \ArrayIterator($this);
     }
 }

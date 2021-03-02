@@ -30,9 +30,8 @@ class ReaderService
                     $this->data = $this->sanitize($response->getBody()->getContents());
                 });
                 $promise->wait();
-            } while(!empty($this->data->error));
-        }
-        catch (RequestException $e) {
+            } while (!empty($this->data->error));
+        } catch (RequestException $e) {
             echo $e->getMessage() . "\n";
             echo $e->getRequest()->getMethod();
         }
