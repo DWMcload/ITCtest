@@ -1,5 +1,17 @@
 # ITCtest
 
+****Usage****
+
+Run PHP's own webserver with 
+
+`php -S localhost:8000 ` 
+
+Open browser.
+
+**Disclaimer**
+
+TODO comments showcases potential upgrades with future work. 
+
 https://www.itccompliance.co.uk/recruitment-webservice/documentation
 
 Some pointers:
